@@ -139,7 +139,7 @@
           <div class="flex flex-col items-start justify-center">
             <button class="btn hover:bg-gray-100 hover:border-gray-100">
               <img src="./assets/coin.png" class="w-5" alt="" />
-              <h3><span>0</span> BDT</h3>
+              <h3><span id="feniAmount">0</span> BDT</h3>
             </button>
 
             <h2 class="font-bold text-xl my-5">
@@ -157,12 +157,14 @@
             </p>
 
             <input
-              type="text"
+              id="feniInput"
+              type="number"
               placeholder="Write Donation Amount"
               class="input input-bordered w-full rounded-md placeholder:font-light my-5"
             />
 
             <button
+              id="feniDonate"
               class="btn w-full shadow-none bg-primary text-black text-base font-bold"
             >
               Donate Now
@@ -184,7 +186,7 @@
           <div class="flex flex-col items-start justify-center">
             <button class="btn hover:bg-gray-100 hover:border-gray-100">
               <img src="./assets/coin.png" class="w-5" alt="" />
-              <h3><span>0</span> BDT</h3>
+              <h3><span id="qoutaAmount">0</span> BDT</h3>
             </button>
 
             <h2 class="font-bold text-xl my-5">
@@ -203,12 +205,14 @@
             </p>
 
             <input
-              type="text"
+              id="quotaInput"
+              type="number"
               placeholder="Write Donation Amount"
               class="input input-bordered w-full rounded-md placeholder:font-light my-5"
             />
 
             <button
+              id="quotaDonate"
               class="btn w-full shadow-none bg-primary text-black text-base font-bold"
             >
               Donate Now
@@ -222,14 +226,14 @@
     </main>
 
     <!-- footer -->
-    <footer class="py-10"></footer>
+    <footer class="py-5"></footer>
 
     <!-- Dialog -->
     <dialog id="donatedDialog" class="modal">
       <div class="modal-box text-center flex flex-col items-center">
         <h3 class="text-2xl font-bold">Congrates!</h3>
         <img src="./assets/coin.png" class="mt-5" alt="" />
-        <p class="py-4 font-light">You Have Donated for Humankind</p>
+        <p class="py-4 font-light">You Have Donated</p>
         <h3 class="text-xl font-bold">Successfully</h3>
         <div class="modal-action">
           <form method="dialog">

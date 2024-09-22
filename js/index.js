@@ -34,14 +34,21 @@ document
       alert("Invalid Donation Amount");
       return;
     }
+
+    let totalAmount = getElementTextById("totalAmount");
+    if (totalAmount < value) {
+      alert("You don't have enough balance");
+      return;
+    }
+    // total amount
+    totalAmount -= value;
+    setElementTextById("totalAmount", totalAmount);
+
     // donate amount
     let amount = getElementTextById("noakhaliAmount");
     amount += value;
     setElementTextById("noakhaliAmount", amount);
-    // total amount
-    let totalAmount = getElementTextById("totalAmount");
-    totalAmount -= value;
-    setElementTextById("totalAmount", totalAmount);
+
     // show dialog
     donatedDialog.showModal();
     // set input empty
@@ -52,13 +59,99 @@ document
     const formatDate = date.toString();
 
     // update History
-    const div = document.createElement("div");
-    div.className = "py-6 px-5 border rounded-md";
-    div.innerHTML = `<h1 class="font-bold text-lg">
-            <span>${value}</span> Taka is Donated for Donate for Flood at Noakhali, Bangladesh
+    historyContainer.innerHTML += `<div class="py-6 px-5 border rounded-md">
+          <h1 class="font-bold text-lg">
+            <span>${value}</span> Taka is Donated for Flood at Noakhali, Bangladesh
           </h1>
           <p class="font-light text-sm mt-3">
             Date : <span>${formatDate}</span>
-          </p>`;
-    historyContainer.appendChild(div);
+          </p></div>`;
+  });
+
+// Fani Donate Button
+document
+  .getElementById("feniDonate")
+  .addEventListener("click", function (event) {
+    const value = getInputValueById("feniInput");
+    // validation
+    if (isNaN(value) || value <= 0) {
+      alert("Invalid Donation Amount");
+      return;
+    }
+
+    let totalAmount = getElementTextById("totalAmount");
+    if (totalAmount < value) {
+      alert("You don't have enough balance");
+      return;
+    }
+    // total amount
+    totalAmount -= value;
+    setElementTextById("totalAmount", totalAmount);
+
+    // donate amount
+    let amount = getElementTextById("feniAmount");
+    amount += value;
+    setElementTextById("feniAmount", amount);
+
+    // show dialog
+    donatedDialog.showModal();
+    // set input empty
+    setInputEmptyById("feniInput");
+
+    // get time
+    const date = new Date();
+    const formatDate = date.toString();
+
+    // update History
+    historyContainer.innerHTML += `<div class="py-6 px-5 border rounded-md">
+        <h1 class="font-bold text-lg">
+          <span>${value}</span> Taka is Donated for Flood Relief in Feni,Bangladesh
+        </h1>
+        <p class="font-light text-sm mt-3">
+          Date : <span>${formatDate}</span>
+        </p></div>`;
+  });
+
+// Injured in the Quota Donate Button
+document
+  .getElementById("quotaDonate")
+  .addEventListener("click", function (event) {
+    const value = getInputValueById("quotaInput");
+    // validation
+    if (isNaN(value) || value <= 0) {
+      alert("Invalid Donation Amount");
+      return;
+    }
+
+    let totalAmount = getElementTextById("totalAmount");
+    if (totalAmount < value) {
+      alert("You don't have enough balance");
+      return;
+    }
+    // total amount
+    totalAmount -= value;
+    setElementTextById("totalAmount", totalAmount);
+
+    // donate amount
+    let amount = getElementTextById("qoutaAmount");
+    amount += value;
+    setElementTextById("qoutaAmount", amount);
+
+    // show dialog
+    donatedDialog.showModal();
+    // set input empty
+    setInputEmptyById("quotaInput");
+
+    // get time
+    const date = new Date();
+    const formatDate = date.toString();
+
+    // update History
+    historyContainer.innerHTML += `<div class="py-6 px-5 border rounded-md">
+        <h1 class="font-bold text-lg">
+          <span>${value}</span> Taka is Donated for Aid for Injured in the Quota Movement
+        </h1>
+        <p class="font-light text-sm mt-3">
+          Date : <span>${formatDate}</span>
+        </p></div>`;
   });
