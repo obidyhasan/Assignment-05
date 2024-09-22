@@ -155,3 +155,8 @@ document
           Date : <span>${formatDate}</span>
         </p></div>`;
   });
+
+// Blog button
+document.getElementById("blogBtn").addEventListener("click", function () {
+  window.location.href = "./blog.html";
+});

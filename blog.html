@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+
+    <!-- Lexend Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Daisy Ui & Tailwind CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- config tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#B4F461",
+              secondary: "#F9F7F3",
+            },
+            fontFamily: {
+              lexend: "Lexend",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-lexend">
+    <!-- navbar -->
+    <nav class="bg-white sticky top-0 z-101">
+      <section class="bg-secondary">
+        <section
+          class="max-w-6xl mx-auto gap-5 p-5 flex items-center justify-between flex-wrap"
+        >
+          <!-- Home -->
+          <button id="homeBtn" class="btn bg-primary px-7 shadow-none">
+            Home
+          </button>
+          <!-- Title -->
+          <div class="flex items-center gap-5 font-semibold text-lg">
+            <img src="./assets/logo.png" class="w-10" alt="" />
+            <h1 class="hidden md:block">Donate Bangladesh</h1>
+          </div>
+          <!-- Money -->
+          <div class="flex items-center gap-1">
+            <img src="./assets/coin.png" class="w-5" alt="" />
+            <h3 class="font-semibold text-gray-600">
+              <span id="totalAmount">5500</span> BDT
+            </h3>
+          </div>
+        </section>
+      </section>
+    </nav>
+
+    <!-- Main Section -->
+    <main class="max-w-6xl mx-auto p-5">
+      <h1 class="text-3xl font-bold my-10">Important FAQ</h1>
+
+      <!-- FAQ Section -->
+      <section class="space-y-5">
+        <!-- item 1 -->
+        <div class="collapse collapse-arrow rounded-md bg-secondary">
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title text-xl font-medium">
+            What is the Document Object Model (DOM)?
+          </div>
+          <div class="collapse-content">
+            <p>
+              Document Object Model (DOM) is a programming interface for HTML
+              documents. When the webpage is loaded in the browser, the HTML
+              document is converted into a DOM tree.
+            </p>
+          </div>
+        </div>
+
+        <!-- item 2 -->
+        <div class="collapse collapse-arrow rounded-md bg-secondary">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title text-xl font-medium">
+            How do you select an element from the DOM?
+          </div>
+          <div class="collapse-content">
+            <p>
+              There are many ways to select an element from the Document Object
+              Model (DOM):
+            </p>
+            <li>By Id - getElementById()</li>
+            <li>By class name: - getElementsByClassName()</li>
+            <li>By tag name: - getElementsByTagName()</li>
+            <li>By query selector: - querySelector()</li>
+            <li>By query selector all: - querySelectorAll()</li>
+          </div>
+        </div>
+
+        <!-- item 3 -->
+        <div class="collapse collapse-arrow rounded-md bg-secondary">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title text-xl font-medium">
+            What is event delegation in the context of the DOM, and why is it
+            useful?
+          </div>
+          <div class="collapse-content">
+            <p>
+              Event Delegation is allows to handle events for multiple child
+              elements efficiently without having to add individual event
+              listeners to each one.
+            </p>
+
+            <br />
+            <p class="font-semibold mb-3">Why is it useful?</p>
+            <p>
+              <span class="font-semibold">Efficiency:</span> Event Delegation
+              allows you to attach a single listener to the parent container.
+              This results in less code and better performance.
+            </p>
+            <p class="mt-2">
+              <span class="font-semibold">Dynamism:</span> Event delegation is
+              beneficial when dealing with dynamic content. As new elements are
+              added or removed, the event listener remains attached to the
+              parent, reducing the need for constant reattachment.
+            </p>
+          </div>
+        </div>
+
+        <!-- item 4 -->
+        <div class="collapse collapse-arrow rounded-md bg-secondary">
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title text-xl font-medium">
+            How do you manipulate an element's attributes and styles using the
+            DOM?
+          </div>
+          <div class="collapse-content">
+            <p>Manipulating Attributes</p>
+            <li>
+              getAttribute() - It's retrieves the value of a specified
+              attribute.
+            </li>
+            <li>
+              setAttribute() - It's set the value of a specified attribute.
+            </li>
+            <li>
+              removeAttribute() - It's removes a specified attribute from the
+              element.
+            </li>
+
+            <p class="mt-5">Manipulating Style</p>
+            <li>
+              Style property : It is provides direct access to the element's
+              inline styles
+            </li>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/blog.js"></script>
+  </body>
+</html>
